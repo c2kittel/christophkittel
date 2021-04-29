@@ -4,7 +4,7 @@ email: ckittel@uliege.be
 description: >
   Chrisotph Kittel webpage
 
-  #baseurl: "/jekyll-doc-theme" # the subpath of your site, e.g. /blog/
+#baseurl: "/jekyll-doc-theme" # the subpath of your site, e.g. /blog/
 url: https://c2kittel.github.io/christophkittel/ # the base hostname & protocol for your site
 git_address: https://github.com/c2kittel/christophkittel
 #git_edit_address: https://github.com/aksakalli/jekyll-doc-theme/blob/gh-pages
