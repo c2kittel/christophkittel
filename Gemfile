@@ -4,7 +4,8 @@ ruby RUBY_VERSION
 # gem "jekyll", "4.0"
 
 # to use GitHub Pages
-gem "github-pages", group: :jekyll_plugins
+#gem "github-pages", group: :jekyll_plugins
+gem "github-pages", "~> 214", group: :jekyll_plugins
 
 # If you have any plugins, put them here!
 # group :jekyll_plugins do
