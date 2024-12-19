@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Publications
-sectionid: publications
+permalink: /docs/my-page/
 ---
