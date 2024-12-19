@@ -33,23 +33,28 @@ exclude:
   - _docs
 timezone: Europe/Berlin
 defaults:
+- scope:
+    path: _posts
+    type: posts
+  values:
+    layout: post
+    sectionid: blog
 
-navigation:
-  - title: "CV"
-    url: /cv/
-  - title: "Publications"
-    url: /publications/
-  - title: "Projects"
-    url: /publications/
-  - title: "Students"
-    url: /students/
+- scope:
+    path: _docs
+    type: docs
+  values:
+    layout: docs
+    sectionid: docs
+    seo:
+      type: "WebPage"
 
 collections:
-#  docs:
-#   permalink: /:collection/:path/
-#    output: true
-#  posts:
-#    permalink: /blog/:year/:month/:day/:title/
-#    output: true
+  docs:
+    permalink: /:collection/:path/
+    output: true
+  posts:
+    permalink: /blog/:year/:month/:day/:title/
+    output: true
 
 theme: jekyll-theme-cayman
