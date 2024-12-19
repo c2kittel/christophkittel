@@ -1,5 +1,5 @@
 ---
 layout: page
-title: CV
-sectionid: cv
+title: Publications
+sectionid: publications
 ---
