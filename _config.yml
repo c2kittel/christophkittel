@@ -29,23 +29,10 @@ exclude:
   - .idea/
   - .gitignore
   - README.md
+  - _posts
+  - _docs
 timezone: Europe/Berlin
 defaults:
-- scope:
-    path: _posts
-    type: posts
-  values:
-    layout: post
-    sectionid: blog
-
-- scope:
-    path: _docs
-    type: docs
-  values:
-    layout: docs
-    sectionid: docs
-    seo:
-      type: "WebPage"
 
 collections:
 #  docs:
