@@ -1,0 +1,15 @@
+- title: CV
+  docs:
+  - cv
+
+- title: Publications
+  docs:
+  - publications
+
+  - title: Projects
+  docs:
+  - projects
+
+- title: Students
+  docs:
+  - students
