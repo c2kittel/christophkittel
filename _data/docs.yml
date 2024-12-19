@@ -1,11 +1,15 @@
-- title: Getting Started
+- title: CV
   docs:
-  - home
-  - themes
-  - customization
+  - cv
 
-- title: Examples
+- title: Publications
   docs:
-  - cheatsheet
-  - font-awesome
-  - bootstrap
+  - publications
+
+  - title: Projects
+  docs:
+  - projects
+
+- title: Students
+  docs:
+  - students
