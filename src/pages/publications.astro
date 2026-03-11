@@ -1,26 +1,76 @@
+
 ---
-import Layout from '../layouts/BaseLayout.astro';
-import publications from '../data/publications.json';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { publications } from '../data/publications.js';
+
+// On définit tes 5 publications majeures (Highlights)
+// Tu peux les filtrer par titre ou DOI
+const highlightedDOIs = [
+  "10.1038/s41586-025-09657-w", // Ocean warming (Nature 2025)
+  "10.1038/s41558-024-01954-y", // Meteorites (Nature CC 2024)
+  "10.5194/tc-16-7-2655-2022",  // Clouds drive differences (2022)
+  "10.5194/tc-15-3-1215-2021",  // Diverging future SMB (2021)
+  "10.1038/s41467-020-20011-8"  // Greenland CMIP6 (2020)
+];
+
+const highlights = publications.filter(p => highlightedDOIs.includes(p.doi));
 ---
 
-<Layout title="Publications | Christoph Kittel">
-  <main class="max-w-4xl mx-auto p-6">
-    <h1 class="text-3xl font-bold mb-8">Publications</h1>
-    
-    <div class="space-y-8">
-      {["2025", "2024", "2023", "2022", "2021"].map(year => (
-        <section>
-          <h2 class="text-xl font-semibold border-b-2 border-blue-500 w-fit mb-4">{year}</h2>
-          <ul class="list-disc pl-5 space-y-4">
-            {publications.filter(p => p.year === year).map(pub => (
-              <li>
-                <p class="text-gray-800">{pub.fullReference}</p>
-                <a href={pub.doi} class="text-blue-600 hover:underline text-sm" target="_blank">DOI Link</a>
-              </li>
-            ))}
-          </ul>
-        </section>
-      ))}
-    </div>
+<BaseLayout title="Publications | Christoph Kittel">
+  <main class="max-w-5xl mx-auto p-8">
+    <header class="mb-16">
+      <h1 class="text-5xl font-extrabold text-gray-900 mb-4">Publications</h1>
+      <p class="text-xl text-gray-600">Full list of peer-reviewed articles and key research contributions.</p>
+    </header>
+
+    <section class="mb-24">
+      <div class="flex items-center gap-4 mb-8">
+        <h2 class="text-2xl font-bold text-blue-900 uppercase tracking-wider">Selected Highlights</h2>
+        <div class="h-px flex-1 bg-blue-100"></div>
+      </div>
+      
+      <div class="grid gap-8">
+        {highlights.map(pub => (
+          <div class="group relative bg-white border border-blue-100 p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2m-7 14H7v-2h5v2m5-4H7v-2h10v2m0-4H7V7h10v2Z"/></svg>
+            </div>
+            <span class="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold mb-4">{pub.year}</span>
+            <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors">{pub.title}</h3>
+            <p class="text-gray-500 mb-6 italic">{pub.journal}</p>
+            <div class="flex gap-4">
+              <a href={pub.link} target="_blank" class="text-sm font-semibold text-blue-600 hover:text-blue-800">DOI / Article ↗</a>
+              <a href="#" class="text-sm font-semibold text-gray-400 hover:text-gray-900">Read Summary (Coming soon) →</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section>
+      <div class="flex items-center gap-4 mb-12">
+        <h2 class="text-2xl font-bold text-gray-800 uppercase tracking-wider">Full Chronological List</h2>
+        <div class="h-px flex-1 bg-gray-100"></div>
+      </div>
+
+      <div class="space-y-8">
+        {publications.map((pub, index) => (
+          <div class="flex gap-8 group">
+            <div class="flex-none w-12 pt-1">
+              <span class="text-2xl font-black text-gray-200 group-hover:text-blue-200 transition-colors tabular-nums">
+                {(index + 1).toString().padStart(2, '0')}
+              </span>
+            </div>
+            <div>
+              <p class="text-lg font-semibold text-gray-900 leading-snug mb-1">{pub.title}</p>
+              <p class="text-sm text-gray-600 mb-2">{pub.authors}</p>
+              <p class="text-xs font-bold text-blue-600 uppercase tracking-tighter">
+                {pub.journal} <span class="mx-2 text-gray-300">|</span> {pub.year}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   </main>
-</Layout>
+</BaseLayout>
