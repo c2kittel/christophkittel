@@ -1,17 +1,114 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Home">
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+    
+    <div class="md:col-span-4 space-y-8">
+      <div class="rounded-2xl overflow-hidden shadow-lg border-4 border-white aspect-square">
+        <img src="/img/ledoug.jpg" alt="Christoph Kittel" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500" />
+      </div>
+
+      <section class="space-y-4">
+        <h3 class="font-serif text-xl font-bold border-b border-slate-200 pb-2 text-slate-900">Contact</h3>
+        
+        <div class="text-sm space-y-5">
+          <div>
+            <div class="flex items-center space-x-2 mb-1.5">
+              
+              <p class="font-bold text-blue-950">University of Liège</p>
+            </div>
+            <p>Laboratory of Climatology (SPHERES)</p>
+            <p>Office B11, Clos Mercator 3</p>
+            <p>4000 Liège, Belgium</p>
+            <a href="mailto:ckittel@uliege.be" class="text-blue-700 hover:underline">ckittel@uliege.be</a>
+          </div>
+
+          <div>
+            <p class="font-bold text-blue-950 mb-1.5">Vrije Universiteit Brussel</p>
+            <p>Assistant Professor (Climate Modelling)</p>
+            <p>Department of Geography</p>
+            <p>Room F4.65, Pleinlaan 2</p>
+            <p>1050 Brussels, Belgium</p>
+            <a href="mailto:christoph.kittel@vub.be" class="text-blue-700 hover:underline">christoph.kittel@vub.be</a>
+          </div>
+
+          <div class="flex items-center space-x-3 pt-3 border-t border-slate-100">
+             <a href="https://orcid.org/0000-0001-6586-9784" target="_blank" class="hover:opacity-75 transition" title="View ORCID Profile">
+               <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" class="inline w-4" alt="ORCID" />
+               <span class="text-slate-500 hover:text-blue-700 text-xs ml-1.5">ORCID Profile</span>
+             </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="md:col-span-8 space-y-12">
+      <header>
+        <h1 class="font-serif text-4xl md:text-6xl font-bold text-slate-950 mb-3 tracking-tighter">Christoph Kittel</h1>
+        <p class="text-xl text-blue-900 font-medium tracking-tight">FNRS Postdoctoral Researcher (ULiège) & Assistant Professor (VUB)</p>
+      </header>
+
+      <section class="prose prose-slate lg:prose-lg max-w-none text-slate-800 text-justify leading-relaxed space-y-6">
+        <p>
+          I am an FNRS Postdoctoral Researcher at the University of Liège (ULiège) and an Assistant Professor in Climate Modelling at the Vrije Universiteit Brussel (VUB). I hold a Master’s degree in Geography (specializing in Climatology) and a PhD in Climatology from ULiège.
+        </p>
+        <p>
+          My research is dedicated to understanding the role of ice sheets within the polar climate system, particularly in the face of current climate change. I investigate complex interactions between ice dynamics, the atmosphere, and the ocean using coupled polar climate models. Furthermore, I am developing the integration of AI methods into these models to better account for these interactions in long-term climate projections and reduce associated uncertainties.
+        </p>
+      </section>
+
+      <section class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+        <h3 class="font-serif text-2xl font-bold mb-6 flex items-center text-slate-900">
+          <span class="w-8 h-px bg-blue-600 mr-4"></span> Research Interests
+        </h3>
+        <div class="flex flex-wrap gap-3">
+          {[
+            'Ice Sheet Dynamics', 'Polar Climate Modeling', 'Atmosphere-Ocean Interaction', 
+            'Climate Projections', 'Sea Level Rise', 'AI in Geosciences'
+          ].map((tag) => (
+            <span class="px-4 py-1.5 bg-slate-100 text-slate-700 text-xs font-bold uppercase tracking-widest rounded-full border border-slate-200 hover:bg-slate-200 transition">
+              {tag}
+            </span>
+          ))}
+        </div>
+      </section>
+      
+      <section class="space-y-6">
+         <h3 class="font-serif text-2xl font-bold border-b border-slate-100 pb-2 text-slate-900">Positions</h3>
+         <div class="relative pl-8 border-l-2 border-slate-200 space-y-8">
+            <div class="relative">
+              <div class="absolute -left-[37px] top-1 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow-sm"></div>
+              <p class="font-bold text-slate-950">FNRS Postdoctoral Researcher</p>
+              <p class="text-sm text-slate-600 uppercase tracking-wide">Since 2021 · University of Liège (ULiège)</p>
+            </div>
+            
+            <div class="relative">
+              <div class="absolute -left-[37px] top-1 w-4 h-4 bg-slate-400 rounded-full border-4 border-white shadow-sm"></div>
+              <p class="font-bold text-slate-950">Assistant Professor (Climate Modelling)</p>
+              <p class="text-sm text-slate-600 uppercase tracking-wide">Since 2024 · Vrije Universiteit Brussel (VUB)</p>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-[37px] top-1 w-4 h-4 bg-slate-300 rounded-full border-4 border-white shadow-sm"></div>
+              <p class="font-bold text-slate-950">Postdoctoral Researcher</p>
+              <p class="text-sm text-slate-600 uppercase tracking-wide">2022 – FEB 2024 · IGE, Université Grenoble Alpes (France)</p>
+            </div>
+
+            <div class="relative">
+              <div class="absolute -left-[37px] top-1 w-4 h-4 bg-slate-200 rounded-full border-4 border-white shadow-sm"></div>
+              <p class="font-bold text-slate-950">Postdoctoral Researcher</p>
+              <p class="text-sm text-slate-600 uppercase tracking-wide">2021 – 2021 · University of Liège (ULiège)</p>
+            </div>
+
+            <div class="relative text-slate-500">
+              <div class="absolute -left-[37px] top-1 w-4 h-4 bg-slate-100 rounded-full border-4 border-white shadow-sm"></div>
+              <p class="font-medium text-slate-700">PhD Candidate / Research Scientist</p>
+              <p class="text-xs text-slate-500 uppercase">2016 – 2021 · University of Liège (ULiège)</p>
+            </div>
+         </div>
+      </section>
+    </div>
+  </div>
+</BaseLayout>
