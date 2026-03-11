@@ -4,11 +4,10 @@ import { publications } from '../data/publications.js';
 
 // On définit tes 5 publications majeures (Highlights)
 const highlightedDOIs = [
-  "10.1038/s41586-025-09657-w", // Ocean warming (Nature 2025)
-  "10.1038/s41558-024-01954-y", // Meteorites (Nature CC 2024)
-  "10.5194/tc-16-7-2655-2022",  // Clouds drive differences (2022)
-  "10.5194/tc-15-3-1215-2021",  // Diverging future SMB (2021)
-  "10.1038/s41467-020-20011-8"  // Greenland CMIP6 (2020)
+  "10.5194/tc-15-1215-2021",  // Diverging SMB
+  "10.5194/tc-16-2655-2022",  // Clouds
+  "10.5194/tc-19-4459-2025",  // Greenland 200 years
+  "10.1038/s41586-025-09657-w" // Nature 2025
 ];
 
 const highlights = publications.filter(p => highlightedDOIs.includes(p.doi));
@@ -41,14 +40,17 @@ const latestFirst = [...publications].reverse();
             <span class="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold mb-4">{pub.year}</span>
             <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors">{pub.title}</h3>
             <p class="text-gray-500 mb-6 italic">{pub.journal}</p>
-            <div class="flex gap-6">
-              <a href={pub.link} target="_blank" class="text-sm font-bold text-blue-600 hover:text-blue-800 flex items-center gap-2">
-                DOI / Article 
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-              </a>
-              <span class="text-sm font-semibold text-gray-300 italic">Summary coming soon</span>
-            </div>
-          </div>
+        <div class="flex gap-6">
+  		<a href={pub.link} target="_blank" class="text-sm font-bold text-blue-600 hover:text-blue-800 flex items-center gap-2">
+    		DOI / Article
+  		  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+ 	 </a>	
+
+  		<a href={`/publications/${pub.doi.replaceAll('/', '-')}`} class="text-sm font-bold text-gray-900 hover:text-blue-700 flex items-center gap-2 transition-colors">
+    Read Summary →
+  		</a>
+     		</div>  
+	</div>
         ))}
       </div>
     </section>

@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { publications } from '../../data/publications.js';
+
+export function getStaticPaths() {
+  const highlights = [
+    {
+      doi: "10.5194/tc-15-1215-2021",
+      summary: "This study highlights a major decoupling in Antarctica's future: while the grounded ice sheet gains mass due to increased snowfall, the ice shelves face a dramatic increase in surface melting. Using the MAR model, we showed that by 2100, runoff could increase by a factor of 10 to 100, potentially threatening the stability of the shelves via hydrofracturing.",
+      keyTakeaway: "Surface melt is the dominant driver of mass loss for ice shelves, unlike the grounded ice sheet which remains dominated by snowfall."
+    },
+    {
+      doi: "10.5194/tc-16-2655-2022",
+      summary: "We investigated why different climate models disagree on the amount of future Antarctic melt. The answer lies in the clouds: the way models represent cloud phase (liquid vs ice) and their radiative effects (the 'blanket' effect) explains most of the spread in projections. MAR shows that liquid-containing clouds significantly amplify surface warming.",
+      keyTakeaway: "Cloud-radiative properties are the primary source of uncertainty in predicting the future collapse of Antarctic ice shelves."
+    },
+    {
+      doi: "10.5194/tc-19-4459-2025",
+      summary: "Beyond 2100, the Greenland Ice Sheet enters a new regime. We explored scenarios over 200 years, showing that even if warming stabilizes, the 'melt-elevation feedback' can trigger irreversible mass loss. This work emphasizes that current 2100 targets might hide the long-term commitment of ice sheet retreat.",
+      keyTakeaway: "Atmospheric warming thresholds are likely to be exceeded long-term, leading to a sustained and accelerating contribution to sea-level rise."
+    },
+    {
+      doi: "10.1038/s41586-025-09657-w",
+      summary: "Published in Nature, this collaborative work reveals that more than half of Antarctica's ice shelves could become unviable due to ocean warming. We demonstrate that subsurface ocean temperatures are rising faster than expected, accelerating basal melt and destabilizing the ice-sheet gates.",
+      keyTakeaway: "60% of Antarctic ice shelves are at risk of losing their structural integrity, a critical tipping point for global sea-level rise."
+    }
+  ];
+
+  return highlights.map(h => {
+    const pub = publications.find(p => p.doi === h.doi);
+    return {
+      params: { doi: h.doi.replaceAll('/', '-') }, // On remplace / par - pour l'URL
+      props: { pub, content: h }
+    };
+  });
+}
+
+const { pub, content } = Astro.props;
+---
+
+<BaseLayout title={pub.title}>
+  <main class="max-w-4xl mx-auto p-8 mt-12">
+    <a href="/publications" class="text-blue-600 hover:underline mb-8 inline-block">← Back to Publications</a>
+    
+    <article>
+      <header class="mb-12">
+        <h1 class="text-4xl font-extrabold text-gray-900 mb-6">{pub.title}</h1>
+        <div class="flex flex-wrap gap-3 mb-6">
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-bold">{pub.year}</span>
+          <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">{pub.journal}</span>
+        </div>
+        <p class="text-lg text-gray-700 leading-relaxed italic">{pub.authors}</p>
+      </header>
+
+      <div class="prose prose-blue max-w-none">
+        <h2 class="text-2xl font-bold mb-4">Summary</h2>
+        <p class="text-xl leading-relaxed text-gray-800 mb-8">
+          {content.summary}
+        </p>
+
+        <div class="bg-blue-900 text-white p-8 rounded-2xl mb-12 shadow-lg">
+          <h3 class="text-blue-200 uppercase tracking-widest text-sm font-bold mb-2">Key Takeaway</h3>
+          <p class="text-2xl font-medium leading-snug">
+            "{content.keyTakeaway}"
+          </p>
+        </div>
+      </div>
+
+      <div class="border-t pt-8">
+        <a href={pub.link} target="_blank" class="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700 transition-colors">
+          Read Full Article on Publisher Website
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </a>
+      </div>
+    </article>
+  </main>
+</BaseLayout>
