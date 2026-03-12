@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { cvData } from '../data/cv.js';
+---
+
+<BaseLayout title="CV | Christoph Kittel">
+  <main class="max-w-4xl mx-auto p-8 py-16">
+    <header class="mb-16 border-b pb-8">
+      <h1 class="text-5xl font-black text-gray-900 mb-4">Curriculum Vitae</h1>
+      <p class="text-blue-600 font-bold text-lg uppercase tracking-widest">Scientific Experience & Academic Service</p>
+    </header>
+
+    <section class="mb-20">
+      <h2 class="text-sm font-black text-gray-400 uppercase tracking-[0.2em] mb-8 flex items-center gap-4">
+        Scientific Experience <div class="h-px flex-1 bg-gray-100"></div>
+      </h2>
+      <div class="space-y-12">
+        {cvData.experience.map(job => (
+          <div class="relative pl-8 border-l-2 border-blue-50">
+            <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white border-2 border-blue-600"></div>
+            <h3 class="text-xl font-bold text-gray-900">{job.institution}</h3>
+            <div class="mt-4 space-y-4">
+              {job.roles.map(role => (
+                <div class="flex flex-col md:flex-row md:justify-between md:items-baseline">
+                  <span class="font-semibold text-gray-700 italic">{role.title}</span>
+                  <span class="text-sm font-mono text-gray-400">{role.period}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <div class="grid md:grid-cols-2 gap-16 mb-20">
+      <section>
+        <h2 class="text-sm font-black text-gray-400 uppercase tracking-[0.2em] mb-8">Teaching</h2>
+        <div class="space-y-6">
+          <div>
+            <p class="text-xs font-bold text-blue-600 mb-1">ULiège (2025 - ...)</p>
+            <p class="text-sm text-gray-700">Introduction to modelling in physical geography</p>
+            <p class="text-sm text-gray-700 italic">Géographie de l’énergie</p>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-blue-600 mb-1">VUB (2025 - ...)</p>
+            <p class="text-sm text-gray-700 italic">Global Change - Seminar "The oceanic circulation"</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-black text-gray-400 uppercase tracking-[0.2em] mb-8">Supervision</h2>
+        <ul class="space-y-4 text-sm text-gray-700">
+          <li class="flex items-start gap-2">
+            <span class="text-blue-600 font-bold">•</span>
+            <span><strong>2 PhD Students</strong> (Main Supervisor - ULiège)</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-blue-600 font-bold">•</span>
+            <span><strong>2 PhD Committees</strong> (1 ULiège, 1 VUB)</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-blue-600 font-bold">•</span>
+            <span>Master & Bachelor students supervision (ULiège/VUB)</span>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="grid md:grid-cols-2 gap-16">
+       <div>
+        <h2 class="text-sm font-black text-gray-400 uppercase tracking-[0.2em] mb-8">Education</h2>
+        <div class="space-y-8">
+          {cvData.education.map(edu => (
+            <div>
+              <p class="font-bold text-gray-900 leading-tight">{edu.degree}</p>
+              <p class="text-sm text-gray-500">{edu.institution} | {edu.period}</p>
+              {edu.mention && <p class="text-xs font-bold text-blue-500 mt-1 italic">{edu.mention}</p>}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-sm font-black text-gray-400 uppercase tracking-[0.2em] mb-8">Honors & Awards</h2>
+        <div class="space-y-8">
+          {cvData.awards.map(award => (
+            <div>
+              <div class="flex justify-between items-baseline mb-1">
+                <p class="font-bold text-gray-900">{award.title}</p>
+                <span class="text-xs font-mono text-gray-400">{award.year}</span>
+              </div>
+              <p class="text-sm text-gray-600 leading-snug">{award.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
