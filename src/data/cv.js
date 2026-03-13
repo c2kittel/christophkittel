@@ -33,9 +33,30 @@ export const cvData = {
     { degree: "Master in Geographical Sciences (Climatology)", institution: "ULiège", period: "2014 - 2016", mention: "Summa cum laude" },
     { degree: "Bachelor in Geographical Sciences", institution: "ULiège", period: "2011 - 2014", mention: "Cum laude" }
   ],
-  awards: [
-    { title: "Prix Gérard Beltrando", year: "2023", provider: "AIC", desc: "Best PhD thesis in climatology." },
-    { title: "FNRS Postdoctoral Grant", year: "2022", provider: "F.R.S.-FNRS", desc: "3-year research grant." },
-    { title: "Prix José-Adolphe Sporck", year: "2016", provider: "SGL", desc: "Best master thesis in geography." }
+awards: [
+    { 
+      title: "Prix Gérard Beltrando", 
+      year: "2023", 
+      provider: "Association Internationale de Climatologie (AIC)", 
+      desc: "Prize awarded for the best PhD thesis in climatology." 
+    },
+    { 
+      title: "FNRS Postdoctoral Fellowship", 
+      year: "2022", 
+      provider: "F.R.S.-FNRS", 
+      desc: "Competitive 3-year research grant awarded by the National Fund for Scientific Research." 
+    },
+    { 
+      title: "WBI Excellence Scholarship", 
+      year: "2021", 
+      provider: "Wallonie-Bruxelles International", 
+      desc: "Post-doctoral grant for international research mobility outside the Wallonia-Brussels Federation." 
+    },
+    { 
+      title: "Prix José-Adolphe Sporck", 
+      year: "2016", 
+      provider: "Société Géographique de Liège", 
+      desc: "Awarded for the best master thesis in geographical sciences." 
+    }
   ]
 };
