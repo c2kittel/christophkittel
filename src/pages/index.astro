@@ -6,7 +6,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
     
     <div class="md:col-span-4 space-y-8">
-      <div class="rounded-2xl overflow-hidden shadow-lg border-4 border-white aspect-square">
+      <div class="rounded-2xl overflow-hidden shadow-lg border-4 border-white aspect-square bg-slate-100">
         <img src="/img/ledoug.jpg" alt="Christoph Kittel" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500" />
       </div>
 
@@ -15,10 +15,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         
         <div class="text-sm space-y-5">
           <div>
-            <div class="flex items-center space-x-2 mb-1.5">
-              
-              <p class="font-bold text-blue-950">University of Liège</p>
-            </div>
+            <p class="font-bold text-blue-950 mb-1.5 uppercase tracking-tight text-xs">University of Liège</p>
             <p>Laboratory of Climatology (SPHERES)</p>
             <p>Office B11, Clos Mercator 3</p>
             <p>4000 Liège, Belgium</p>
@@ -26,7 +23,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
 
           <div>
-            <p class="font-bold text-blue-950 mb-1.5">Vrije Universiteit Brussel</p>
+            <p class="font-bold text-blue-950 mb-1.5 uppercase tracking-tight text-xs">Vrije Universiteit Brussel</p>
             <p>Assistant Professor (Climate Modelling)</p>
             <p>Department of Geography</p>
             <p>Room F4.65, Pleinlaan 2</p>
@@ -34,11 +31,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <a href="mailto:christoph.kittel@vub.be" class="text-blue-700 hover:underline">christoph.kittel@vub.be</a>
           </div>
 
-          <div class="flex items-center space-x-3 pt-3 border-t border-slate-100">
-             <a href="https://orcid.org/0000-0001-6586-9784" target="_blank" class="hover:opacity-75 transition" title="View ORCID Profile">
-               <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" class="inline w-4" alt="ORCID" />
-               <span class="text-slate-500 hover:text-blue-700 text-xs ml-1.5">ORCID Profile</span>
-             </a>
+          <div class="pt-4 border-t border-slate-100 space-y-3">
+            <a href="https://orcid.org/0000-0002-3112-8704" target="_blank" class="flex items-center group transition" title="View ORCID Profile">
+              <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" class="w-4 h-4 flex-none" alt="ORCID" />
+              <span class="text-slate-500 group-hover:text-blue-700 text-xs ml-3 font-medium transition-colors">ORCID Profile</span>
+            </a>
+
+            <a href="https://www.uliege.be/cms/c_9054334/fr/repertoire?uid=U223159" target="_blank" class="flex items-center group transition" title="ULiège Directory">
+              <img src="/images/logos/uliege-logo.png" class="w-4 h-4 flex-none object-contain" alt="ULiège" />
+              <span class="text-slate-500 group-hover:text-blue-700 text-xs ml-3 font-medium transition-colors">ULiège Directory</span>
+            </a>
+
+            <a href="https://fard.research.vub.be/christoph-kittel" target="_blank" class="flex items-center group transition" title="VUB Research Portal">
+              <img src="/images/logos/vub-logo.png" class="w-4 h-4 flex-none object-contain" alt="VUB" />
+              <span class="text-slate-500 group-hover:text-orange-700 text-xs ml-3 font-medium transition-colors">VUB Research Portal</span>
+            </a>
           </div>
         </div>
       </section>
@@ -68,7 +75,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             'Ice Sheet Dynamics', 'Polar Climate Modeling', 'Atmosphere-Ocean Interaction', 
             'Climate Projections', 'Sea Level Rise', 'AI in Geosciences'
           ].map((tag) => (
-            <span class="px-4 py-1.5 bg-slate-100 text-slate-700 text-xs font-bold uppercase tracking-widest rounded-full border border-slate-200 hover:bg-slate-200 transition">
+            <span class="px-4 py-1.5 bg-slate-50 text-slate-600 text-[10px] font-black uppercase tracking-widest rounded-full border border-slate-200 hover:border-blue-300 hover:text-blue-700 transition-all cursor-default">
               {tag}
             </span>
           ))}
@@ -80,32 +87,32 @@ import BaseLayout from '../layouts/BaseLayout.astro';
          <div class="relative pl-8 border-l-2 border-slate-200 space-y-8">
             <div class="relative">
               <div class="absolute -left-[37px] top-1 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow-sm"></div>
-              <p class="font-bold text-slate-950">FNRS Postdoctoral Researcher</p>
-              <p class="text-sm text-slate-600 uppercase tracking-wide">Since 2021 · University of Liège (ULiège)</p>
-            </div>
-            
-            <div class="relative">
-              <div class="absolute -left-[37px] top-1 w-4 h-4 bg-slate-400 rounded-full border-4 border-white shadow-sm"></div>
-              <p class="font-bold text-slate-950">Assistant Professor (Climate Modelling)</p>
-              <p class="text-sm text-slate-600 uppercase tracking-wide">Since 2024 · Vrije Universiteit Brussel (VUB)</p>
+              <p class="font-bold text-slate-950 leading-tight">Assistant Professor (Climate Modelling)</p>
+              <p class="text-[10px] text-blue-600 font-black uppercase tracking-wider">Since 2024 · Vrije Universiteit Brussel (VUB)</p>
             </div>
 
             <div class="relative">
+              <div class="absolute -left-[37px] top-1 w-4 h-4 bg-slate-400 rounded-full border-4 border-white shadow-sm"></div>
+              <p class="font-bold text-slate-950 leading-tight">FNRS Postdoctoral Researcher</p>
+              <p class="text-[10px] text-slate-500 font-black uppercase tracking-wider">Since 2022 · University of Liège (ULiège)</p>
+            </div>
+            
+            <div class="relative">
               <div class="absolute -left-[37px] top-1 w-4 h-4 bg-slate-300 rounded-full border-4 border-white shadow-sm"></div>
-              <p class="font-bold text-slate-950">Postdoctoral Researcher</p>
-              <p class="text-sm text-slate-600 uppercase tracking-wide">2022 – FEB 2024 · IGE, Université Grenoble Alpes (France)</p>
+              <p class="font-bold text-slate-950 leading-tight">Postdoctoral Researcher</p>
+              <p class="text-[10px] text-slate-500 font-black uppercase tracking-wider">2022 – 2024 · IGE, Université Grenoble Alpes (France)</p>
             </div>
 
             <div class="relative">
               <div class="absolute -left-[37px] top-1 w-4 h-4 bg-slate-200 rounded-full border-4 border-white shadow-sm"></div>
-              <p class="font-bold text-slate-950">Postdoctoral Researcher</p>
-              <p class="text-sm text-slate-600 uppercase tracking-wide">2021 – 2021 · University of Liège (ULiège)</p>
+              <p class="font-bold text-slate-950 leading-tight">Postdoctoral Researcher</p>
+              <p class="text-[10px] text-slate-500 font-black uppercase tracking-wider">2021 – 2021 · University of Liège (ULiège)</p>
             </div>
 
-            <div class="relative text-slate-500">
+            <div class="relative">
               <div class="absolute -left-[37px] top-1 w-4 h-4 bg-slate-100 rounded-full border-4 border-white shadow-sm"></div>
-              <p class="font-medium text-slate-700">PhD Candidate / Research Scientist</p>
-              <p class="text-xs text-slate-500 uppercase">2016 – 2021 · University of Liège (ULiège)</p>
+              <p class="font-bold text-slate-950 leading-tight">PhD Candidate / Research Scientist</p>
+              <p class="text-[10px] text-slate-400 font-black uppercase tracking-wider">2016 – 2021 · University of Liège (ULiège)</p>
             </div>
          </div>
       </section>
