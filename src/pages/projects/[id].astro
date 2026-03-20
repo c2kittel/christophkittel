@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { projects } from '../../data/projects.js';
+// Si tu utilises Content Collections pour les news :
+import { getCollection } from 'astro:content';
+
+export function getStaticPaths() {
+  return projects.map(p => ({
+    params: { id: p.id },
+    props: { project: p }
+  }));
+}
+
+const { project } = Astro.props;
+
+// Récupérer les news liées au projet
+const allNews = await getCollection('news');
+const relatedNews = allNews
+  .filter(news => news.data.relatedProject === project.id)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout title={`${project.title} | Projects`}>
+  <main class="max-w-4xl mx-auto p-8 py-16">
+    <nav class="mb-8">
+      <a href="/projects" class="text-sm font-bold text-blue-600 hover:underline flex items-center gap-2">
+        ← Back to Projects
+      </a>
+    </nav>
+
+    <header class="mb-12">
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span class="px-3 py-1 bg-orange-100 text-orange-700 text-[10px] font-black uppercase tracking-widest rounded-full border border-orange-200">
+          {project.role}
+        </span>
+        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-[10px] font-black uppercase tracking-widest rounded-full">
+          {project.funding}
+        </span>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-black text-slate-900 leading-tight mb-6 italic">
+        {project.title}
+      </h1>
+      <p class="text-lg font-medium text-slate-500 italic">
+        Consortium: {project.consortium}
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div class="md:col-span-2 space-y-8">
+        <section class="prose prose-slate max-w-none">
+          <h2 class="text-sm font-black uppercase tracking-widest text-slate-400 mb-4">Project Overview</h2>
+          <div class="text-slate-800 leading-relaxed whitespace-pre-line">
+            {project.fullDescription}
+          </div>
+        </section>
+
+        {relatedNews.length > 0 && (
+          <section class="pt-12 border-t border-slate-100">
+            <h2 class="text-sm font-black uppercase tracking-widest text-slate-400 mb-6">Latest Updates</h2>
+            <div class="space-y-4">
+              {relatedNews.map(news => (
+                <a href={`/news/${news.slug}`} class="block p-4 rounded-xl border border-slate-100 hover:border-blue-200 hover:shadow-sm transition-all bg-slate-50/50">
+                  <p class="text-[10px] font-mono text-slate-400 mb-1">{news.data.date.toLocaleDateString()}</p>
+                  <h3 class="font-bold text-slate-900 group-hover:text-blue-600">{news.data.title}</h3>
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
+      </div>
+
+      <aside class="space-y-8">
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+          <h3 class="text-xs font-black uppercase tracking-widest text-slate-400 mb-4">Details</h3>
+          <dl class="space-y-4">
+            <div>
+              <dt class="text-[10px] font-bold text-blue-600 uppercase">Period</dt>
+              <dd class="text-sm font-bold text-slate-900">{project.period}</dd>
+            </div>
+            <div>
+              <dt class="text-[10px] font-bold text-blue-600 uppercase">Role</dt>
+              <dd class="text-sm font-bold text-slate-900">{project.role} (VUB)</dd>
+            </div>
+            <div>
+              <dt class="text-[10px] font-bold text-blue-600 uppercase">Focus Area</dt>
+              <dd class="flex flex-wrap gap-1 mt-1">
+                {project.tags.map(tag => (
+                  <span class="text-[9px] font-bold bg-white px-2 py-0.5 rounded border border-slate-200 text-slate-600 italic">#{tag}</span>
+                ))}
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </aside>
+    </div>
+  </main>
+</BaseLayout>
