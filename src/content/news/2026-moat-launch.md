@@ -1,7 +1,7 @@
 ---
-title: "Heading to Antarctica: What the VUB Team Is Preparing for MOAT"
-date: 2026-07-01
-summary: "The VUB team is finalising in-situ instrumentation — a WISe snow moisture probe and a temporary AWS — to characterise surface melt on the Roi Baudouin Ice Shelf and feed the MAR model."
+title: "MOAT Project Officially Launched!"
+date: 2026-08-01
+summary: "The MOAT consortium, funded by BELSPO, is officially kicking off. Our team at VUB is currently preparing the first instrumentation phase."
 relatedProject: "moat-antarctica"
 image: "/img/news/fieldwork-prep.jpg"
 ---

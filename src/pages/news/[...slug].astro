@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const allNews = await getCollection('news');
+  return allNews.map(news => ({
+    params: { slug: news.slug },
+    props: { news },
+  }));
+}
+
+const { news } = Astro.props;
+const { Content } = await render(news);
+---
+
+<BaseLayout title={`${news.data.title} | News`}>
+  <article class="max-w-3xl mx-auto py-8">
+    <nav class="mb-8">
+      <a href="/news" class="text-sm font-bold text-blue-600 hover:underline flex items-center gap-2">
+        ← Back to News
+      </a>
+    </nav>
+
+    <header class="mb-10">
+      <time class="text-sm font-mono text-slate-400 block mb-3">
+        {news.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+      </time>
+      {news.data.relatedProject && (
+        <span class="inline-block mb-4 px-2 py-1 bg-blue-50 text-blue-600 text-[10px] font-black uppercase tracking-tighter rounded border border-blue-100">
+          Project: {news.data.relatedProject.replace(/-/g, ' ')}
+        </span>
+      )}
+      <h1 class="text-4xl font-black text-slate-900 italic leading-tight">{news.data.title}</h1>
+    </header>
+
+    <div class="prose prose-slate max-w-none">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>
