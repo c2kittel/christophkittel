@@ -15,27 +15,110 @@ const { Content } = await render(news);
 ---
 
 <BaseLayout title={`${news.data.title} | News`}>
-  <article class="max-w-3xl mx-auto py-8">
-    <nav class="mb-8">
+  <article class="max-w-2xl mx-auto py-8">
+    <nav class="mb-10">
       <a href="/news" class="text-sm font-bold text-blue-600 hover:underline flex items-center gap-2">
         ← Back to News
       </a>
     </nav>
 
-    <header class="mb-10">
-      <time class="text-sm font-mono text-slate-400 block mb-3">
+    <header class="mb-8">
+      <div class="text-xs font-semibold tracking-widest uppercase text-blue-600 mb-3">
         {news.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-      </time>
+      </div>
       {news.data.relatedProject && (
-        <span class="inline-block mb-4 px-2 py-1 bg-blue-50 text-blue-600 text-[10px] font-black uppercase tracking-tighter rounded border border-blue-100">
+        <span class="inline-block mb-5 px-3 py-1 bg-blue-50 text-blue-700 text-[10px] font-black uppercase tracking-widest rounded-full border border-blue-100">
           Project: {news.data.relatedProject.replace(/-/g, ' ')}
         </span>
       )}
-      <h1 class="text-4xl font-black text-slate-900 italic leading-tight">{news.data.title}</h1>
+      <h1 class="text-3xl md:text-4xl font-black text-slate-900 leading-tight mb-6 italic">{news.data.title}</h1>
+      <div class="w-12 h-1 bg-blue-600 rounded-full"></div>
     </header>
 
-    <div class="prose prose-slate max-w-none">
+    <div class="news-article">
       <Content />
     </div>
   </article>
 </BaseLayout>
+
+<style>
+  .news-article {
+    font-family: 'Lora', Georgia, serif;
+    color: #3a3529;
+    line-height: 1.9;
+  }
+
+  .news-article :global(p) {
+    font-size: 1rem;
+    text-align: justify;
+    margin-bottom: 1.4rem;
+  }
+
+  .news-article :global(p:first-of-type) {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #44403c;
+  }
+
+  .news-article :global(h2) {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #2563eb;
+    margin: 2.75rem 0 1rem;
+  }
+
+  .news-article :global(strong) {
+    color: #1e293b;
+  }
+
+  .news-article :global(blockquote) {
+    background: #eff6ff;
+    border-left: 3px solid #2563eb;
+    border-radius: 0 0.5rem 0.5rem 0;
+    padding: 1.1rem 1.4rem;
+    margin: 1.4rem 0;
+    font-size: 0.94rem;
+    color: #334155;
+    line-height: 1.8;
+  }
+
+  .news-article :global(blockquote p) {
+    text-align: left;
+    margin-bottom: 0.6rem;
+    font-size: 0.94rem;
+    font-weight: 400;
+    color: #334155;
+  }
+
+  .news-article :global(blockquote p:last-child) {
+    margin-bottom: 0;
+  }
+
+  .news-article :global(blockquote strong) {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #2563eb;
+    margin-bottom: 0.4rem;
+  }
+
+  .news-article :global(hr) {
+    border: none;
+    border-top: 1px solid #e2e8f0;
+    margin: 2.5rem 0 1.5rem;
+  }
+
+  .news-article :global(hr + p) {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #94a3b8;
+    text-align: left;
+  }
+</style>

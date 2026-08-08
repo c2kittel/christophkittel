@@ -14,9 +14,11 @@ This is precisely what the MOAT project (*Melting ice shelves Of AntarcTica*), f
 
 Our contribution at VUB focuses on in-situ instrumentation to characterise the surface conditions and snow properties associated with surface melt events. At VUB, we will have a postdoc joining me on this topic for two years, in addition to my own work on the project.
 
-A key instrument we are deploying is the **WISe snow moisture probe**, which directly measures liquid water content in the snowpack. Surface meltwater infiltration and refreezing within the snow are critical but poorly constrained processes that alter the structural integrity of ice shelves. Having direct, continuous measurements of snow moisture at the surface will provide a dataset that, to our knowledge, is rarely collected in Antarctica — and that is essential for understanding how melt pulses propagate through the snowpack.
+> **WISe snow moisture probe**
+> A key instrument we are deploying is the WISe snow moisture probe, which directly measures liquid water content in the snowpack. Surface meltwater infiltration and refreezing within the snow are critical but poorly constrained processes that alter the structural integrity of ice shelves. Having direct, continuous measurements of snow moisture at the surface will provide a dataset that, to our knowledge, is rarely collected in Antarctica — and that is essential for understanding how melt pulses propagate through the snowpack.
 
-Alongside this, we are setting up a **temporary Automatic Weather Station (AWS)** at our target measurement site. The station will be equipped with a vertical array of temperature sensors to capture the thermal profile of the snow and ice, as well as standard meteorological variables (air temperature, humidity, snow height, wind, radiation). The goal is simple but critical: to have continuous, high-resolution atmospheric and surface conditions collocated with our melt observations. Without knowing what the atmosphere was doing at the exact location of our measurements, interpreting radar and photonic sensor data becomes much harder.
+> **Temporary Automatic Weather Station (AWS)**
+> Alongside this, we are setting up a temporary AWS at our target measurement site. The station will be equipped with a vertical array of temperature sensors to capture the thermal profile of the snow and ice, as well as standard meteorological variables (air temperature, humidity, snow height, wind, radiation). The goal is simple but critical: to have continuous, high-resolution atmospheric and surface conditions collocated with our melt observations. Without knowing what the atmosphere was doing at the exact location of our measurements, interpreting radar and photonic sensor data becomes much harder.
 
 ## From field data to better climate models
 
@@ -24,6 +26,6 @@ The data collected on the ground will not just sit in a database. A central obje
 
 Better-constrained surface melt processes in MAR will in turn improve projections of the Antarctic ice sheet's contribution to sea level rise — a key input for future IPCC assessments and ice sheet modelling efforts under CMIP7/ISMIP7.
 
-## Looking ahead
+---
 
-The instrumentation is currently being finalised and will be shipped to Antarctica ahead of the upcoming austral summer season. Stay tuned for updates from the field.
+*The instrumentation is currently being finalised and will be shipped to Antarctica ahead of the upcoming austral summer season. Stay tuned for updates from the field.*
