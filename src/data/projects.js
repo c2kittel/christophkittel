@@ -47,5 +47,26 @@ export const projects = [
 
     This work, carried out as a postdoctoral researcher at the Institut des Géosciences de l'Environnement (IGE) in Grenoble, provided a dedicated modelling tool to assess how freshwater forcing reshapes sea ice extent, water mass properties and ocean circulation around Antarctica.`,
     tags: ["Antarctica", "NEMO-SI3", "Sea Ice", "H2020"]
+  },
+  {
+    id: "aiai",
+    title: "AIAI: Artificial Intelligence to Improve the Coupling Between the Antarctic Ice Sheet and the Ocean/Atmosphere System",
+    subtitle: "Neural network emulators to couple ice sheets, atmosphere and ocean",
+    status: "ongoing",
+    role: "Co-supervisor",
+    period: "2023 - 2027",
+    funding: "ANR (Agence Nationale de la Recherche), ANR-22-CE01-0014",
+    institution: "ULiège",
+    consortium: "IGE, IPSL (LSCE-LOCEAN), ULiège, VUB",
+    website: "https://anr-aiai.github.io/",
+    summary: "Neural network emulators coupling the Antarctic ice sheet to the global atmosphere and ocean, to reduce uncertainty in Antarctica's contribution to sea level rise.",
+    fullDescription: `AIAI (2023–2027) aims to improve the integration of ice sheets into Earth System Models through neural network emulators at the interfaces between the Antarctic ice sheet and the global atmosphere, and between the Antarctic ice sheet and the global ocean.
+
+    The project develops convolutional neural networks (U-Net) trained on high-resolution, polar-oriented regional models — the MAR atmospheric model (surface mass balance) and the NEMO-SI3 ocean model (ice-shelf basal melt) — to emulate their behaviour within the coarser-resolution IPSL-CM6 climate model, coupled to the Elmer/Ice ice-sheet model. The goal is to reduce uncertainty in projections of the Antarctic contribution to sea level rise by better capturing the two opposing drivers of ice mass change: increased surface accumulation/melt and increased ocean-driven dynamical mass loss.
+
+    At ULiège, I supervise Achille Gelens, a research engineer based at LSCE, who is developing the neural network emulator of the MAR atmospheric model. I also contribute to discussions on the ocean (NEMO-SI3) emulator and its integration into the IPSL climate model.
+
+    This work was supported by the French National Research Agency through the AIAI project (ANR-22-CE01-0014). It is also directly connected to my FNRS postdoctoral project — a link between the two will be added here once that project page is online.`,
+    tags: ["Antarctica", "Machine Learning", "Ice Sheet-Ocean Coupling", "ANR"]
   }
 ];

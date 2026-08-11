@@ -89,6 +89,16 @@ const relatedNews = allNews
                 ))}
               </dd>
             </div>
+            {project.website && (
+              <div>
+                <dt class="text-[10px] font-bold text-blue-600 uppercase">Project Website</dt>
+                <dd class="text-sm font-bold">
+                  <a href={project.website} target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline break-all">
+                    {project.website.replace(/^https?:\/\//, '')}
+                  </a>
+                </dd>
+              </div>
+            )}
           </dl>
         </div>
       </aside>
