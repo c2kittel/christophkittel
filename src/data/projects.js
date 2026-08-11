@@ -6,7 +6,7 @@ export const projects = [
     role: "Co-PI",
     period: "2024 - 2028", // À ajuster selon le contrat BELSPO
     funding: "BELSPO (Belgian Federal Science Policy Office)",
-    institution: "Vrije Universiteit Brussel (VUB)",
+    institution: "VUB",
     consortium: "ULB, KU Leuven, VUB",
     summary: "Measuring basal and surface melting on the Roi Baudouin Ice Shelf to improve climate and ice sheet models.",
     fullDescription: `Antarctic ice shelves are key to controlling global sea-level rise. Since 1992, global sea level has risen by around 10 cm, and future rise will increasingly depend on how the Antarctic ice sheet responds to climate change. 
@@ -23,6 +23,8 @@ export const projects = [
     role: "PhD Candidate",
     period: "2016 - 2021",
     funding: "none",
+    institution: "ULiège",
+    consortium: "ULiège-UCLouvain",
     summary: "PhD thesis on how small-scale atmosphere-ocean-sea ice-ice sheet processes shape the Antarctic climate, using the MAR regional climate model.",
     fullDescription: `This PhD project investigated how small-scale processes (typical length scales below 100 km) shape the interactions between the ocean, sea ice, ice sheet and atmosphere in Antarctica, focusing on the Adélie Land region.
 
@@ -38,7 +40,8 @@ export const projects = [
     role: "Postdoc",
     period: "2022 - 2023",
     funding: "H2020 (CRICES)",
-    institution: "Institut des Géosciences de l'Environnement (IGE), Grenoble",
+    institution: "IGE",
+    consortium: "CRICES",
     summary: "Development of a regional NEMO-SI3 configuration around Antarctica to study how ocean freshwater input affects sea ice and ocean circulation.",
     fullDescription: `As part of Work Packages 2 and 3 of the H2020 CRICES project, I developed a regional NEMO-SI3 configuration covering the Antarctic margins to investigate the impact of freshwater fluxes into the Southern Ocean — from ice shelf basal melt and iceberg discharge — on sea ice and ocean properties.
 

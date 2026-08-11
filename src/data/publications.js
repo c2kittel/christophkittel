@@ -470,5 +470,29 @@ export const publications = [
     journal: "The Cryosphere, 19 (11), 6023-6042",
     doi: "10.5194/tc-19-6023-2025",
     link: "https://hdl.handle.net/2268/338973"
+  },
+  {
+    title: "The PolarRES dataset: a state-of-the-art regional climate model ensemble for understanding Antarctic climate",
+    authors: "Gilbert, E., Torres-Alavez, J. A., Hofsteenge, M. G., van de Berg, W. J., Boberg, F., Christensen, O. B., van Dalum, C. T., Fettweis, X., Gumber, S., Hansen, N., Kittel, C., Lambin, C., Maure, D., Mottram, R., Olesen, M., Orr, A., Phillips, T., van Tiggelen, M., Verro, K., & Mooney, P. A.",
+    year: 2026,
+    journal: "The Cryosphere, 20 (5), 2629-2658",
+    doi: "10.5194/tc-20-2629-2026",
+    link: "https://hdl.handle.net/2268/345830"
+  },
+  {
+    title: "The recent enhancement of the surface melt over the Antarctic Peninsula dictated by thermodynamics",
+    authors: "Zhang, Q., Huai, B., Wang, S., Noël, B., van den Broeke, M. R., Fettweis, X., Kittel, C., Qin, D., & Ding, M.",
+    year: 2026,
+    journal: "Nature Communications",
+    doi: "10.1038/s41467-026-76310-z",
+    link: "https://hdl.handle.net/2268/347808"
+  },
+  {
+    title: "Water isotope–temperature relationship variability across Antarctica set by atmospheric circulation",
+    authors: "Casado, M., Bailey, A., Leroy-Dos Santos, C., Fourré, E., Favier, V., Agosta, C., Dutrievoz, N., Kittel, C., Arnaud, L., Prié, F., Akers, P. D., Cauquoin, A., Werner, M., Janssen, L., Stenni, B., Dreossi, G., Spolaor, A., Petteni, A., Savarino, J., & Landais, A.",
+    year: 2026,
+    journal: "Nature Geoscience, 19 (5), 581-588",
+    doi: "10.1038/s41561-026-01961-y",
+    link: "https://doi.org/10.1038/s41561-026-01961-y"
   }
 ];

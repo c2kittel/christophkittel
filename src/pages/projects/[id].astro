@@ -79,7 +79,7 @@ const relatedNews = allNews
             </div>
             <div>
               <dt class="text-[10px] font-bold text-blue-600 uppercase">Role</dt>
-              <dd class="text-sm font-bold text-slate-900">{project.role} (VUB)</dd>
+              <dd class="text-sm font-bold text-slate-900">{project.role}{project.institution ? ` (${project.institution})` : ''}</dd>
             </div>
             <div>
               <dt class="text-[10px] font-bold text-blue-600 uppercase">Focus Area</dt>
