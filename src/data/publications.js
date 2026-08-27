@@ -494,5 +494,13 @@ export const publications = [
     journal: "Nature Geoscience, 19 (5), 581-588",
     doi: "10.1038/s41561-026-01961-y",
     link: "https://doi.org/10.1038/s41561-026-01961-y"
+  },
+  {
+    title: "DeepMelt-GL v1: a neural network emulator of sub-shelf melt rates for the unrepresented regions of ice-shelf cavities in ocean models",
+    authors: "Ockenden, H., Burgard, C., Mathiot, P., Kittel, C., Gellens, A., Agosta, C., & Jourdain, N. C.",
+    year: 2026,
+    journal: "Geoscientific Model Development, 19 (16), 7979-8002",
+    doi: "10.5194/gmd-19-7979-2026",
+    link: "https://hdl.handle.net/2268/348236"
   }
 ];
