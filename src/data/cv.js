@@ -1,6 +1,11 @@
 export const cvData = {
   experience: [
     {
+      institution: "Université libre de Bruxelles",
+      location: "Brussels, BE",
+      roles: [{ title: "Scientific Collaborator", period: "2026 - Present" }]
+    },
+    {
       institution: "Vrije Universiteit Brussel",
       location: "Brussels, BE",
       roles: [{ title: "Assistant Professor (10%)", period: "2024 - Present" }]
