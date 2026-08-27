@@ -59,6 +59,7 @@ export const projects = [
     institution: "ULiège",
     consortium: "IGE, IPSL (LSCE-LOCEAN), ULiège, VUB",
     website: "https://anr-aiai.github.io/",
+    relatedDOIs: ["10.5194/gmd-19-7979-2026"],
     summary: "Neural network emulators coupling the Antarctic ice sheet to the global atmosphere and ocean, to reduce uncertainty in Antarctica's contribution to sea level rise.",
     fullDescription: `AIAI (2023–2027) aims to improve the integration of ice sheets into Earth System Models through neural network emulators at the interfaces between the Antarctic ice sheet and the global atmosphere, and between the Antarctic ice sheet and the global ocean.
 
