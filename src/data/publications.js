@@ -502,5 +502,13 @@ export const publications = [
     journal: "Geoscientific Model Development, 19 (16), 7979-8002",
     doi: "10.5194/gmd-19-7979-2026",
     link: "https://hdl.handle.net/2268/348236"
+  },
+  {
+    title: "Antarctica and the Southern Ocean",
+    authors: "Raphael, M. N., Clem, K. R., Adjou, M., Adusumilli, S., Amory, C., Bahrami, M., Baiman, R., Banwell, A. F., Barreira, S., Beadling, R. L., ... & Ziegler, T.",
+    year: 2026,
+    journal: "Bulletin of the American Meteorological Society, 107 (8), 352-S400",
+    doi: "10.1175/bams-d-26-0127.1",
+    link: "https://hdl.handle.net/2268/348608"
   }
 ];
