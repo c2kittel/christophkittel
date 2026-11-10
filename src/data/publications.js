@@ -510,5 +510,21 @@ export const publications = [
     journal: "Bulletin of the American Meteorological Society, 107 (8), 352-S400",
     doi: "10.1175/bams-d-26-0127.1",
     link: "https://hdl.handle.net/2268/348608"
+  },
+  {
+    title: "Mass balance of the Greenland and Antarctic ice sheets from the 1970s to 2023",
+    authors: "Otosaka, I. N., Shepherd, A., Amory, C., Horwath, M., Ivins, E. R., King, M. D., Nowicki, S., Payne, A. J., Rignot, E., Sandberg Sørensen, L., Schlegel, N.-J., Simon, K. M., Smith, B. E., Sutterley, T. C., van den Broeke, M. R., Velicogna, I., A, G., Agosta, C., Ditmar, P., Döhne, T., ... Wouters, B.",
+    year: 2026,
+    journal: "Scientific Data, 13, 1301",
+    doi: "10.1038/s41597-026-08088-0",
+    link: "https://hdl.handle.net/2268/349024"
+  },
+  {
+    title: "Diverging runoff drives uncertainty in Antarctic surface mass balance projections under a high emission scenario",
+    authors: "Heurgue, B., Amory, C., Kittel, C., Boberg, F., Durand, G., Favier, V., Fettweis, X., Glaude, Q., Goelzer, H., Hansen, N., Jourdain, N. C., Mottram, R., Olesen, M., Van de Berg, W. J., Van den Broeke, M. R., & Wijngaard, R. R.",
+    year: 2026,
+    journal: "The Cryosphere, 20 (11), 6353-6373",
+    doi: "10.5194/tc-20-6353-2026",
+    link: "https://hdl.handle.net/2268/350440"
   }
 ];
