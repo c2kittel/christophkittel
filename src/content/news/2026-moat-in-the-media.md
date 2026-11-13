@@ -14,6 +14,7 @@ Ahead of our departure on 19 November, the MOAT field campaign has caught the at
 - **DH**: [Des chercheurs de l'ULB et de la VUB en mission pendant deux mois en Antarctique](https://www.dhnet.be/dernieres-depeches/2026/11/12/des-chercheurs-de-lulb-et-de-la-vub-en-mission-pendant-deux-mois-en-antarctique-SIWTB35UHBEHJAA7ZJR3OSXQ4Y/)
 - **Bruxelles Today**: [Des belges en Antarctique pour mesurer la fonte des glaces](https://www.bruxellestoday.be/actualite/belges-antarctique-mesurer-fonte-des-glaces.html)
 - **BX1**: [Des chercheurs de l'ULB et de la VUB en mission pendant deux mois en Antarctique](https://bx1.be/categories/news/des-chercheurs-de-lulb-et-de-la-vub-en-mission-pendant-deux-mois-en-antarctique/)
+- **ULB**: [Antarctique : mesurer la fonte des glaces](https://actus.ulb.be/fr/actus/recherche/antarctique-mesurer-la-fonte-des-glaces) (press release)
 - **BRF**: coverage in German, "Brüsseler Forscher fahren für zwei Monate in die Antarktis".
 
-To follow the details of the campaign, see our [departure announcement](/news/2026-moat-fieldwork-departure).
+All my media appearances are listed on the [Media page](/media). To follow the details of the campaign, see our [departure announcement](/news/2026-moat-fieldwork-departure).

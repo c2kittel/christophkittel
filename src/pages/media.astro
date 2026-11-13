@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { mediaItems } from '../data/media.js';
+
+const items = [...mediaItems].sort((a, b) => b.date.localeCompare(a.date));
+const years = [...new Set(items.map(i => i.date.slice(0, 4)))];
+const fmt = (d) => new Date(d).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+---
+
+<BaseLayout title="Media | Christoph Kittel">
+  <main class="max-w-4xl mx-auto p-8 py-16">
+    <header class="mb-16 border-b pb-8">
+      <h1 class="text-5xl font-black text-gray-900 mb-4">In the Media</h1>
+      <p class="text-blue-600 font-bold text-lg uppercase tracking-widest leading-tight">
+        Interviews, press coverage & popular science
+      </p>
+      <p class="text-sm text-gray-500 italic mt-4">This list is still being compiled and may be incomplete.</p>
+    </header>
+
+    {years.map(year => (
+      <section class="mb-12">
+        <h2 class="text-sm font-black text-gray-400 uppercase tracking-[0.2em] mb-6 flex items-center gap-4">
+          {year} <div class="h-px flex-1 bg-gray-100"></div>
+        </h2>
+        <ul class="space-y-6">
+          {items.filter(i => i.date.startsWith(year)).map(item => (
+            <li class="pl-4 border-l-2 border-blue-100">
+              <p class="text-xs font-bold text-blue-600 uppercase tracking-tighter mb-1">
+                {item.outlet} • {item.type} • <span class="font-mono text-gray-400 normal-case">{item.dateLabel ?? fmt(item.date)}</span>
+              </p>
+              {item.link ? (
+                <a href={item.link} target="_blank" rel="noopener" class="font-bold text-gray-900 hover:text-blue-700 transition-colors leading-snug">{item.title}</a>
+              ) : (
+                <p class="font-bold text-gray-900 leading-snug">{item.title}</p>
+              )}
+              {item.project && (
+                <p class="text-xs mt-1"><a href={`/projects/${item.project}`} class="text-gray-400 hover:text-blue-700">Project: MOAT</a></p>
+              )}
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </main>
+</BaseLayout>
